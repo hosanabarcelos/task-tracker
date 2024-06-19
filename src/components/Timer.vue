@@ -4,12 +4,12 @@
   >
     <Stopwatch :time="time" />
     <div class="buttons">
-      <button class="button" @click="start">
+      <button class="button" @click="start" :disabled="stopwatchActive">
         <span class="icon">
           <i class="fas fa-play"></i>
         </span>
       </button>
-      <button class="button" @click="stop">
+      <button class="button" @click="stop" :disabled="!stopwatchActive">
         <span class="icon">
           <i class="fas fa-stop"></i>
         </span>
@@ -25,10 +25,12 @@ import Stopwatch from "./Stopwatch.vue";
 export default defineComponent({
   // eslint-disable-next-line vue/multi-word-component-names
   name: "Form",
+  emits: ['stopTimer'],
   data() {
     return {
         time: 0,
         stopwatch: 0,
+        stopwatchActive: false
     }
   },
   components: {
@@ -36,12 +38,16 @@ export default defineComponent({
   },
   methods: {
     start() {
+        this.stopwatchActive = true;
         this.stopwatch = setInterval(() => {
             this.time += 1;
         }, 1000);
     },
     stop() {
+        this.stopwatchActive = false;
         clearInterval(this.stopwatch);
+        this.$emit('stopTimer', this.time);
+        this.time = 0;
     }
   }
 });
@@ -51,10 +57,6 @@ export default defineComponent({
 .buttons {
   display: flex;
   gap: 10px;
-}
-
-.box {
-  width: 100%;
 }
 
 .column {
