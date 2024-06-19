@@ -10,10 +10,11 @@
             type="text"
             class="input"
             placeholder="Qual tarefa você deseja iniciar?"
+            v-model="description"
           />
         </div>
         <div class="column">
-            <Timer />
+            <Timer @stopTimer="stop" />
         </div>
       </div>
     </div>
@@ -26,12 +27,25 @@ import Timer from "./Timer.vue";
 export default defineComponent({
   // eslint-disable-next-line vue/multi-word-component-names
   name: "Form",
+  data() {
+    return {
+        description: '',
+    }
+  },
   components: {
     Timer
   },
+  methods: {
+    stop(time: number) : void {
+        console.log('tempo', time)
+        console.log('descrição', this.description)
+    }
+  }
 });
 </script>
 
 <style scoped>
-
+.box {
+  width: 100%;
+}
 </style>
