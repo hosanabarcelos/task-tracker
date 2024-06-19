@@ -1,6 +1,6 @@
 <template>
     <div class="box">
-      <div class="columns">
+      <div class="columns is-vcentered">
         <div
           class="column is-8"
           role="form"
@@ -13,8 +13,8 @@
             v-model="description"
           />
         </div>
-        <div class="column">
-            <Timer @stopTimer="stop" />
+        <div class="column is-flex is-align-items-center is-justify-content-flex-end">
+          <Timer @stopTimer="stop" />
         </div>
       </div>
     </div>
@@ -46,6 +46,25 @@ export default defineComponent({
 
 <style scoped>
 .box {
+  width: 100%;
+}
+
+.columns.is-vcentered {
+  align-items: center;
+}
+
+.column.is-8 {
+  display: flex;
+  align-items: center;
+}
+
+.column.is-flex {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+}
+
+input.input {
   width: 100%;
 }
 </style>
