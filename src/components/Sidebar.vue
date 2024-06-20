@@ -2,7 +2,8 @@
 	<header>
 		<h1 class="logo">
 			<img src="../assets/logo.png" alt="Logo">
-			<p>Tracker</p>
+			<p>Task Tracker</p>
+            <h3>Feito por <a href="https://github.com/hosanabarcelos" target="_blank">@hosanabarcelos</a></h3>
 		</h1>
 	</header>
 </template>
@@ -37,6 +38,18 @@ p {
 	font-size: 2rem;
 	font-weight: 600;
 	color: #FFFFFF;
+}
+
+h3 {
+    position: absolute;
+    bottom: 0;
+    margin: 2rem;
+    color: #FFFFFF;
+}
+
+a {
+    color: #FFFFFF;
+    font-weight: 600;
 }
 
 @media only screen and (max-width: 768px) {
