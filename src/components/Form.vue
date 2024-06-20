@@ -27,6 +27,7 @@ import Timer from "./Timer.vue";
 export default defineComponent({
   // eslint-disable-next-line vue/multi-word-component-names
   name: "Form",
+  emits: ['submitTask'],
   data() {
     return {
         description: '',
@@ -37,8 +38,10 @@ export default defineComponent({
   },
   methods: {
     stop(time: number) : void {
-        console.log('tempo', time)
-        console.log('descrição', this.description)
+        this.$emit('submitTask', {
+            time: time,
+            description: this.description
+        });
     }
   }
 });
