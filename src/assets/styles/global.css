@@ -1,0 +1,22 @@
+/* bulma */
+.box {
+    background: #FFFFFF !important;
+}
+
+.input {
+    background: #FFFFFF;
+    color: #000000;
+}
+
+strong {
+    color: #000000 !important;
+}
+
+.input::placeholder {
+    color: #7a7a7a !important;
+}
+
+.button {
+    background: #6095db !important;
+    border: none !important;
+}
