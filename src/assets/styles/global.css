@@ -1,6 +1,7 @@
 /* bulma */
 .box {
     background: #FFFFFF !important;
+    margin-bottom: .5rem !important;
 }
 
 .input {
