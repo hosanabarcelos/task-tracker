@@ -2,20 +2,21 @@
     <div class="box">
         <div class="columns">
             <div class="column is-7">
-                Descrição da tarefa
+                {{ task.description }}
             </div>
             <div class="column">
                 <Stopwatch
-                    time="15"
+                    :time="task.time"
                 />
             </div>
         </div>
     </div>
 </template>
 
-<script>
-import { defineComponent } from 'vue';
+<script lang="ts">
+import { defineComponent, PropType } from 'vue';
 import Stopwatch from './Stopwatch.vue';
+import Tasks from '../interfaces/Tasks';
 
 export default defineComponent({
     // eslint-disable-next-line vue/multi-word-component-names
@@ -23,6 +24,12 @@ export default defineComponent({
 
     components: {
         Stopwatch,
+    },
+    props: {
+        task: {
+            type: Object as PropType<Tasks>,
+            required: true
+        }
     }
 });
 </script>
