@@ -2,7 +2,7 @@
     <div class="box">
         <div class="columns">
             <div class="column is-7">
-                {{ task.description }}
+                {{ task.description || 'Tarefa não definida' }}
             </div>
             <div class="column">
                 <Stopwatch
