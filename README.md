@@ -10,7 +10,7 @@
 
 Tecnologias usadas durante o desenvolvimento:
 
-- [Vue](https://vitejs.dev/)
+- [Vue](https://vuejs.org/)
 - [TypeScript](https://www.typescriptlang.org/)
 - [Bulma](https://bulma.io/)
 
@@ -18,7 +18,7 @@ Tecnologias usadas durante o desenvolvimento:
 
 Clone o projeto:
 ```bash
-git https://github.com/hosanabarcelos/task-tracker-app.git
+git clone https://github.com/hosanabarcelos/task-tracker-app.git
 ```
 Instale as dependências:
 ``` bash
@@ -27,7 +27,7 @@ npm install
 
 Compile o projeto e visualize a aplicação no navegador.
 ``` bash
-$ npm run serve
+npm run serve
 ```
 ---
 
